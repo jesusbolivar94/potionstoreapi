@@ -1,9 +1,14 @@
 {
-    "name": "laravel/laravel",
+    "name": "heyfoodie/potionstoreapi",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "description": "Api para tienda de pociones.",
+    "keywords": ["framework", "laravel", "sanctum"],
+    "authors": [
+        {
+            "name": "Jesús Bolívar",
+            "email": "j5rojo94@gmail.com"
+        }
+    ],
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
