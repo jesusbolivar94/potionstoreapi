@@ -25,7 +25,7 @@
             }
 
             $id = $validator->safe()->only('id');
-            $client = Clients::find($id);
+            $client = Clients::find($id)->first();
 
             return response()->json($client);
         }
@@ -97,9 +97,14 @@
                 'updated_at' => now()
             ]);
 
-            $updatedClient = Clients::find($id);
+            $updatedClient = Clients::find($id)->first();
 
-            return response()->json($updatedClient);
+            return response()->json([
+                'id' => $updatedClient->id,
+                'client_name' => $updatedClient->client_name,
+                'created_at' => $updatedClient->created_at->format('Y-m-d H:i:s'),
+                'updated_at' => $updatedClient->updated_at->format('Y-m-d H:i:s')
+            ]);
         }
 
         public function deleteClient(Request $request)

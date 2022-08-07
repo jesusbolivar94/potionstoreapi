@@ -29,7 +29,7 @@
                 'message' => 'Invalid token.'
             ], 401);
 
-            if ( !$request->isMethod('GET') ) {
+            if ( !in_array($request->method(), ['GET', 'DELETE']) ) {
                 if ( !$request->isJson() ) return response()->json([
                     'message' => 'Invalid input.'
                 ], 401);

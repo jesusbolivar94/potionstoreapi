@@ -26,6 +26,6 @@ class Tokens extends SanctumPersonalAccessToken
             'expires_at' => now()->addHour(3),
         ]);
 
-        return new NewAccessToken($token, $token->getKey().'|'.$plainTextToken);
+        return new NewAccessToken($token, $plainTextToken);
     }
 }
