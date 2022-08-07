@@ -18,10 +18,4 @@
                     'access_token' => $access_token->plainTextToken
                 ]);
         }
-
-        public function error()
-        {
-            return response()
-                ->json(['message' => 'Request error.'], '401');
-        }
     }

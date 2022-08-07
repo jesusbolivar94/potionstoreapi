@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -17,7 +18,6 @@ use App\Http\Controllers\AuthController;
 
 // Authorization
 Route::get('/getToken', [AuthController::class, 'getToken']);
-Route::any('/error', [AuthController::class, 'error'])->name('error');
 
 /*Route::middleware('auth:sanctum')
     ->get('/user', fn (Request $request) => $request->user());*/
