@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
+use App\Models\Tokens;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Laravel\Sanctum\Sanctum;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
+
+        Sanctum::usePersonalAccessTokenModel(Tokens::class);
+
 
         $this->routes(function () {
             Route::middleware('api')
