@@ -29,9 +29,11 @@
                 'message' => 'Invalid token.'
             ], 401);
 
-            if ( !$request->isJson() ) return response()->json([
-                'message' => 'Invalid input.'
-            ], 401);
+            if ( !$request->isMethod('GET') ) {
+                if ( !$request->isJson() ) return response()->json([
+                    'message' => 'Invalid input.'
+                ], 401);
+            }
 
             $checkToken->update([
                 'last_used_at' => now(),
