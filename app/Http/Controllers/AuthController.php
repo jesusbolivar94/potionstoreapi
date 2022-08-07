@@ -4,12 +4,10 @@
 
     use App\Models\Tokens;
     use Illuminate\Http\Request;
-    use DateTime;
-    use Laravel\Sanctum\Sanctum;
 
     class AuthController extends Controller
     {
-        public function getToken(Request $request)
+        public function getToken()
         {
             $token = new Tokens();
 
@@ -19,5 +17,11 @@
                 ->json([
                     'access_token' => $access_token->plainTextToken
                 ]);
+        }
+
+        public function error()
+        {
+            return response()
+                ->json(['message' => 'Request error.'], '401');
         }
     }
