@@ -20,8 +20,10 @@
         {
             $token = $request->bearerToken();
 
+            $secure_token = hash('sha256', $token);
+
             $checkToken = Tokens::where([
-                ['token', $token],
+                ['token', $secure_token],
                 ['expires_at', '>=', now()]
             ]);
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\IngredientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -16,7 +17,8 @@ use App\Http\Controllers\AuthController;
 */
 
 // Authorization
-Route::get('/getToken', [AuthController::class, 'getToken']);
+    # Get authorization token
+    Route::get('/getToken', [AuthController::class, 'getToken']);
 
 // Clients
     # Return data of one client
@@ -47,4 +49,17 @@ Route::get('/getToken', [AuthController::class, 'getToken']);
     Route::delete(
         '/client/{id}',
         [ClientController::class, 'deleteClient']
+    )->middleware('auth:sanctum');
+
+// Ingredients
+    # Return data of all Ingredients
+    Route::get(
+        '/ingredients',
+        [IngredientController::class, 'getIngredients'],
+    )->middleware('auth:sanctum');
+
+    # Return data of one Ingredient
+    Route::get(
+        '/ingredient/{id}',
+        [IngredientController::class, 'getIngredient']
     )->middleware('auth:sanctum');

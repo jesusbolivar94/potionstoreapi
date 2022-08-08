@@ -14,7 +14,8 @@
         public function run()
         {
             $this->call([
-                ClientsSeeder::class
+                ClientsSeeder::class,
+                IngredientsSeeder::class,
             ]);
         }
     }

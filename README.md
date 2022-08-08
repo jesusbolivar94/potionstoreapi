@@ -1,10 +1,8 @@
 # Potion Store API
-<hr>
 
 Api para tienda de pociones.
 
 ## Instalación
-<hr>
 
 Ejecuta los siguientes comandos:
 
@@ -24,7 +22,6 @@ php artisan db:seed
 ```
 
 ## Endpoints
-<hr>
 
 ### Token
 
@@ -82,7 +79,7 @@ Si no se puede crear el cliente recibirás un objeto JSON con el detalle del err
 }
 ```
 
-### PUT `/client/{id}` 
+#### PUT `/client/{id}` 
 
 Si lo necesitas, puedes modificar el nombre del cliente.
 
@@ -122,7 +119,7 @@ Recuerda que los nombres de cliente son únicos, si usas un nombre de cliente ya
 }
 ```
 
-### GET `/client/{id}`
+#### GET `/client/{id}`
 
 Puedes consulta todos los datos registrados de un cliente haciendo una solicitud GET y enviando como parametro del endpoint el ID del cliente que quieres consultar.
 
@@ -151,7 +148,7 @@ Si no se encuentra el cliente recibirás una respuesta con error.
 }
 ```
 
-### GET `/clients`
+#### GET `/clients`
 
 Si lo requieres, puedes consultar todos los clientes registrados. Solo debes enviar una solicitud GET con el token de autorización.
 
@@ -190,7 +187,7 @@ Recibirás un arreglo JSON con todos los clientes registrados.
 ]
 ```
 
-### DELETE `/client/{id}`
+#### DELETE `/client/{id}`
 
 Puedes eliminar un cliente haciendo una petición DELETE pasando como parametro del endpoint el ID del cliente que quieres eliminar.
 
@@ -209,3 +206,90 @@ Si la respuesta es incorrecta recibirás un error.
 }
 ```
 
+### Ingredientes
+
+#### GET `/ingredient/{id}`
+
+Puedes consultar la información de un ingrediente de pociones haciendo una solicitud GET y pasando como parametro del endpoint el id del ingrediente.
+Es necesario autorizar la solicitud con el token.
+
+```JSON
+{
+    "id": 1,
+    "name": "petalos",
+    "stock": 10,
+    "price": 2000,
+    "created_at": "2022-08-08 00:13:06",
+    "updated_at": "2022-08-08 00:13:06"
+}
+```
+
+#### GET `/ingredients`
+
+También puedes consultar un listado de todos los ingredientes disponibles.
+Es necesario autorizar la solicitud con el token.
+
+```JSON
+[
+    {
+        "id": 1,
+        "name": "petalos",
+        "stock": 10,
+        "price": 2000
+    },
+    {
+        "id": 2,
+        "name": "sal de mar",
+        "stock": 10,
+        "price": 3000
+    },
+    {
+        "id": 3,
+        "name": "vino",
+        "stock": 10,
+        "price": 6000
+    },
+    {
+        "id": 4,
+        "name": "polvo magico",
+        "stock": 10,
+        "price": 30000
+    },
+    {
+        "id": 5,
+        "name": "cenizas",
+        "stock": 10,
+        "price": 2500
+    },
+    {
+        "id": 6,
+        "name": "aloe vera",
+        "stock": 10,
+        "price": 1500
+    },
+    {
+        "id": 7,
+        "name": "lagrima de gato",
+        "stock": 10,
+        "price": 9000
+    },
+    {
+        "id": 8,
+        "name": "jugo magico",
+        "stock": 10,
+        "price": 27000
+    },
+    {
+        "id": 9,
+        "name": "sanguijuelas",
+        "stock": 10,
+        "price": 13000
+    },
+    {
+        "id": 10,
+        "name": "polvo de cuerno de bicornio",
+        "stock": 10,
+        "price": 65000
+    }
+]
+```
