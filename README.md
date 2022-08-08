@@ -293,3 +293,82 @@ Es necesario autorizar la solicitud con el token.
     }
 ]
 ```
+
+### Pociones
+
+#### GET `/potions`
+
+Consulta la información de todas las pociones registradas.
+
+```JSON
+[
+    {
+        "id": 1,
+        "name": "poción de amor",
+        "crafting_cost": 1000,
+        "created_at": "2022-08-08 04:29:53",
+        "updated_at": "2022-08-08 04:29:53"
+    },
+    {
+        "id": 2,
+        "name": "poción alisadora",
+        "crafting_cost": 1000,
+        "created_at": "2022-08-08 04:29:53",
+        "updated_at": "2022-08-08 04:29:53"
+    },
+    {
+        "id": 3,
+        "name": "poción multijugos",
+        "crafting_cost": 1000,
+        "created_at": "2022-08-08 04:29:53",
+        "updated_at": "2022-08-08 04:29:53"
+    }
+]
+```
+
+#### GET `/potion/{id}`
+
+Consulta la información de una poción enviando el id como parametro del endpoint. Debes autorizar la solicitud con el token.
+
+```JSON
+{
+    "id": 1,
+    "name": "poción de amor",
+    "crafting_cost": 1000
+}
+```
+
+Todas las pociones tienen un coste de fabricación especificado en el campo `crafting_cost` consideralo al momento de calcular el coste de una poción.
+
+#### GET `/potion/{id}/recipe`
+
+Consulta este endpoint para conocer la receta de las pociones. Envia como parametro el id de la poción, el resultado contiene información de los ingredientes y cantidad de cada uno que son necesarios para fabricar la poción.
+
+```JSON
+[
+    {
+        "id": 1,
+        "potion_id": 1,
+        "ingredient_id": 1,
+        "quantity": 2
+    },
+    {
+        "id": 2,
+        "potion_id": 1,
+        "ingredient_id": 2,
+        "quantity": 1
+    },
+    {
+        "id": 3,
+        "potion_id": 1,
+        "ingredient_id": 3,
+        "quantity": 4
+    },
+    {
+        "id": 4,
+        "potion_id": 1,
+        "ingredient_id": 4,
+        "quantity": 3
+    }
+]
+```

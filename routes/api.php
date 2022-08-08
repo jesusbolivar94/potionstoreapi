@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\PotionController;
+use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -62,4 +64,23 @@ use App\Http\Controllers\AuthController;
     Route::get(
         '/ingredient/{id}',
         [IngredientController::class, 'getIngredient']
+    )->middleware('auth:sanctum');
+
+// Potions
+    # Return data of all Potions
+    Route::get(
+        '/potions',
+        [PotionController::class, 'getPotions']
+    )->middleware('auth:sanctum');
+
+    # Return potion data
+    Route::get(
+        '/potion/{id}',
+        [PotionController::class, 'getPotion']
+    )->middleware('auth:sanctum');
+
+    # Return potion recipe data
+    Route::get(
+        '/potion/{id}/recipe',
+        [RecipeController::class, 'getPotionRecipe']
     )->middleware('auth:sanctum');

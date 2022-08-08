@@ -12,7 +12,7 @@
          *
          * @return void
          */
-        public function run()
+        public function run(): void
         {
             Ingredients::create([
                 'name' => 'petalos',
