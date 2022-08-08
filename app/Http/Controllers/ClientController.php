@@ -3,12 +3,17 @@
     namespace App\Http\Controllers;
 
     use App\Models\Clients;
+    use Illuminate\Http\JsonResponse;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Validator;
 
     class ClientController extends Controller
     {
-        public function getClient(Request $request)
+        /**
+         * @param Request $request
+         * @return JsonResponse
+         */
+        public function getClient(Request $request): JsonResponse
         {
             $parameters = $request->route()->parameters();
 
@@ -29,14 +34,21 @@
             return response()->json($client);
         }
 
-        public function getClients()
+        /**
+         * @return JsonResponse
+         */
+        public function getClients(): JsonResponse
         {
             $clients = Clients::all();
 
             return response()->json($clients);
         }
 
-        public function newClient(Request $request)
+        /**
+         * @param Request $request
+         * @return JsonResponse
+         */
+        public function newClient(Request $request): JsonResponse
         {
             $validator = Validator::make($request->all(), [
                 'client_name' => 'required|string|unique:Clients|max:200',
@@ -60,7 +72,11 @@
             ], 201);
         }
 
-        public function updateClient(Request $request)
+        /**
+         * @param Request $request
+         * @return JsonResponse
+         */
+        public function updateClient(Request $request): JsonResponse
         {
             $parameters = $request->route()->parameters();
             $data = $request->all();
@@ -106,7 +122,11 @@
             ]);
         }
 
-        public function deleteClient(Request $request)
+        /**
+         * @param Request $request
+         * @return JsonResponse
+         */
+        public function deleteClient(Request $request): JsonResponse
         {
             $parameters = $request->route()->parameters();
 

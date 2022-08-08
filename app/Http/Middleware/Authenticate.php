@@ -5,18 +5,19 @@
     use App\Models\Tokens;
     use Closure;
     use Illuminate\Auth\Middleware\Authenticate as Middleware;
+    use Illuminate\Http\Request;
 
     class Authenticate extends Middleware
     {
         /**
          * Get the path the user should be redirected to when they are not authenticated.
          *
-         * @param  \Illuminate\Http\Request  $request
-         * @param  \Closure  $next
-         * @param  string[]  ...$guards
+         * @param  Request  $request
+         * @param  Closure  $next
+         * @param  string[] ...$guards
          * @return string|null
          */
-        public function handle($request, Closure $next, ...$guards)
+        public function handle($request, Closure $next, ...$guards): ?string
         {
             $token = $request->bearerToken();
 

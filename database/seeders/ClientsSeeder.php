@@ -12,7 +12,7 @@
          *
          * @return void
          */
-        public function run()
+        public function run(): void
         {
             Clients::create(['client_name' => 'Elly Kedward']);
             Clients::create(['client_name' => 'Alice Kyteler']);
