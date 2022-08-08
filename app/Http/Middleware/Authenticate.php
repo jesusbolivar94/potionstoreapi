@@ -12,12 +12,12 @@
         /**
          * Get the path the user should be redirected to when they are not authenticated.
          *
-         * @param  Request  $request
-         * @param  Closure  $next
-         * @param  string[] ...$guards
+         * @param  \Illuminate\Http\Request  $request
+         * @param  \Closure  $next
+         * @param  string[]  ...$guards
          * @return string|null
          */
-        public function handle($request, Closure $next, ...$guards): ?string
+        public function handle($request, Closure $next, ...$guards)
         {
             $token = $request->bearerToken();
 
