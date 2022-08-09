@@ -4,27 +4,29 @@
 
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Database\Eloquent\Model;
-    use Illuminate\Database\Eloquent\Relations\HasMany;
+    use Illuminate\Database\Eloquent\Relations\HasOne;
 
-    class Clients extends Model
+    class SellsItems extends Model
     {
         use HasFactory;
 
         protected $fillable = [
-            'client_name',
+            'sell_id',
+            'potion_id',
+            'quantity'
         ];
 
         protected $casts = [
-            'last_purcharse_at' => 'datetime:Y-m-d H:i:s',
             'created_at' => 'datetime:Y-m-d H:i:s',
             'updated_at' => 'datetime:Y-m-d H:i:s',
         ];
 
         /**
-         * @return HasMany
+         * @return HasOne
          */
-        public function sells(): HasMany
+        public function sell(): HasOne
         {
-            return $this->hasMany(Sells::class, 'client_id', 'id');
+            return $this->hasOne(Sells::class, 'sell_id');
         }
+
     }

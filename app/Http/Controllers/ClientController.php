@@ -147,4 +147,35 @@
 
             return response()->json([], 204);
         }
+
+        /**
+         * @param Request $request
+         * @return JsonResponse
+         */
+        public function getClientSells(Request $request): JsonResponse
+        {
+            $parameters = $request->route()->parameters();
+
+            $validator = Validator::make($parameters, [
+                'id' => 'required|numeric|exists:Clients',
+            ]);
+
+            if ( $validator->fails() ) {
+                return response()->json([
+                    'message' => 'Fail data validation',
+                    'details' => $validator->messages()->toArray()
+                ], 400);
+            }
+
+            $id = $validator->safe()->only('id');
+            $client = Clients::find($id)->first();
+            $sells = $client->sells();
+            $data = $sells->get();
+
+            if ( $sells->count() == 1 ) {
+                $data = $sells->first();
+            }
+
+            return response()->json($data);
+        }
     }

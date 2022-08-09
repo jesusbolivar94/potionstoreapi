@@ -18,6 +18,7 @@
                 IngredientsSeeder::class,
                 PotionsSeeder::class,
                 RecipesSeeder::class,
+                SellsSeeder::class,
             ]);
         }
     }

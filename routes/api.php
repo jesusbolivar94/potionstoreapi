@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\PotionController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\SellController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -53,6 +54,12 @@ use App\Http\Controllers\AuthController;
         [ClientController::class, 'deleteClient']
     )->middleware('auth:sanctum');
 
+    # Return sells of one client
+    Route::get(
+        '/client/{id}/sells',
+        [ClientController::class, 'getClientSells']
+    )->middleware('auth:sanctum');
+
 // Ingredients
     # Return data of all Ingredients
     Route::get(
@@ -83,4 +90,23 @@ use App\Http\Controllers\AuthController;
     Route::get(
         '/potion/{id}/recipe',
         [RecipeController::class, 'getPotionRecipe']
+    )->middleware('auth:sanctum');
+
+// Sells
+    # Return data of all sells
+    Route::get(
+        '/sells',
+        [SellController::class, 'getSells']
+    )->middleware('auth:sanctum');
+
+    # Return data of one sell
+    Route::get(
+        '/sell/{id}',
+        [SellController::class, 'getSell']
+    )->middleware('auth:sanctum');
+
+    # Return details of one sell
+    Route::get(
+        '/sell/{id}/detail',
+        [SellController::class, 'getSellDetail']
     )->middleware('auth:sanctum');

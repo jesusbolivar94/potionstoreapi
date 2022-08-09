@@ -206,6 +206,95 @@ Si la respuesta es incorrecta recibirás un error.
 }
 ```
 
+#### GET `/client/{id}/sells`
+
+Consulta este endpoint para obtener todas las ventas asociadas a un cliente.
+
+Debes autorizar esta solicitud enviando el token de autorización.
+
+```JSON
+[
+    {
+        "id": 2,
+        "client_id": 1,
+        "sell_at": "2021-09-13 20:48:48",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 3,
+        "client_id": 1,
+        "sell_at": "2021-09-15 13:28:12",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 4,
+        "client_id": 1,
+        "sell_at": "2021-09-15 13:28:12",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 6,
+        "client_id": 1,
+        "sell_at": "2021-09-15 18:06:10",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 14,
+        "client_id": 1,
+        "sell_at": "2021-09-22 20:59:28",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 17,
+        "client_id": 1,
+        "sell_at": "2021-09-23 18:08:52",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 22,
+        "client_id": 1,
+        "sell_at": "2021-10-01 19:35:59",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 26,
+        "client_id": 1,
+        "sell_at": "2021-10-06 17:34:33",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 30,
+        "client_id": 1,
+        "sell_at": "2021-10-10 16:43:11",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 31,
+        "client_id": 1,
+        "sell_at": "2021-10-11 16:43:11",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 38,
+        "client_id": 1,
+        "sell_at": "2021-10-12 18:37:00",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 42,
+        "client_id": 1,
+        "sell_at": "2021-10-17 22:00:03",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 45,
+        "client_id": 1,
+        "sell_at": "2021-10-18 20:49:23",
+        "created_at": "2022-08-08 22:43:20"
+    }
+]
+```
+
 ### Ingredientes
 
 #### GET `/ingredient/{id}`
@@ -369,6 +458,83 @@ Consulta este endpoint para conocer la receta de las pociones. Envia como parame
         "potion_id": 1,
         "ingredient_id": 4,
         "quantity": 3
+    }
+]
+```
+
+### Ventas
+
+#### GET `/sells`
+
+Consulta todas las ventas registradas. Es necesario autorizar la solicitud con el token de autorización.
+
+Devuelve un arreglo de ventas registradas.
+
+```JSON
+[
+    {
+        "id": 1,
+        "client_id": 3,
+        "sell_at": "2021-09-13 20:48:48",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 2,
+        "client_id": 1,
+        "sell_at": "2021-09-13 20:48:48",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 3,
+        "client_id": 1,
+        "sell_at": "2021-09-15 13:28:12",
+        "created_at": "2022-08-08 22:43:20"
+    },
+    {
+        "id": 4,
+        "client_id": 1,
+        "sell_at": "2021-09-15 13:28:12",
+        "created_at": "2022-08-08 22:43:20"
+    }
+]
+```
+
+#### GET `/sell/{id}`
+
+Obtiene los datos de una venta. Autoriza la solicitud con el token de autorización.
+
+```JSON
+{
+    "id": 1,
+    "client_id": 3,
+    "sell_at": "2021-09-13 20:48:48",
+    "created_at": "2022-08-08 22:43:20"
+}
+```
+
+#### GET `/sell/{id}/detail`
+
+Por último, puedes obtener todas las pociones de una compra consultando a este endpoint. Debes enviar el id de la venta como parametro del endpoint y autorizar la solicitud con el token de autorización.
+
+Esta solicitud devuelve un arreglo de pociones con la cantidad comprada.
+
+```JSON
+[
+    {
+        "id": 7,
+        "sell_id": 7,
+        "potion_id": 2,
+        "quantity": 12,
+        "created_at": "2022-08-09T02:43:21.000000Z",
+        "updated_at": "2022-08-09T02:43:21.000000Z"
+    },
+    {
+        "id": 8,
+        "sell_id": 7,
+        "potion_id": 1,
+        "quantity": 5,
+        "created_at": "2022-08-09T02:43:21.000000Z",
+        "updated_at": "2022-08-09T02:43:21.000000Z"
     }
 ]
 ```
