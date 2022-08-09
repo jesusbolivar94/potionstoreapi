@@ -21,6 +21,18 @@ Opcional, puedes poblar la base de datos con datos iniciales.
 php artisan db:seed
 ```
 
+Si no quieres ejecutar la migración puedes ejecutar las consultas en la carpeta **SCRIPTS** para crear las tablas y poblarlas con datos.
+
+También, puedes agregar el parametro de configuración APP_TIMEZONE al archivo de configuración `.env` para que las fechas de la base de datos sean configuradas correctamente según la zona de venta de la tienda de pociones. 
+
+Por ejemplo:
+
+```dotenv
+APP_TIMEZONE=America/Santiago
+```
+
+Si no agregas el parametro entonces la zona horaria por defecto será `UTC`
+
 ## Endpoints
 
 ### Token

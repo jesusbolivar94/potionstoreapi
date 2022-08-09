@@ -1,0 +1,15 @@
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 1, 1, 2, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 1, 2, 1, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 1, 3, 4, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 1, 4, 3, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 2, 5, 3, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 2, 6, 3, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 2, 7, 1, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 2, 8, 3, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 9, 2, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 10, 1, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 7, 3, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 7, 3, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 4, 2, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 2, 1, '2022-08-08 23:59:12');
+INSERT INTO `recipes` ( `potion_id`, `ingredient_id`, `quantity`, `created_at`) VALUES ( 3, 5, 1, '2022-08-08 23:59:12');

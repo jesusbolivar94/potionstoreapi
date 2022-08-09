@@ -1,0 +1,10 @@
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'petalos', 10, 2000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'sal de mar', 10, 3000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'vino', 10, 6000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'polvo magico', 10, 30000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'cenizas', 10, 2500, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'aloe vera', 10, 1500, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'lagrima de gato', 10, 9000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'jugo magico', 10, 27000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'sanguijuelas', 10, 13000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
+INSERT INTO `ingredients` ( `name`, `stock`, `price`, `created_at`, `updated_at`) VALUES ( 'polvo de cuerno de bicornio', 10, 65000, '2022-08-08 23:59:14', '2022-08-08 23:59:14');
